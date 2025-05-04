@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalTime;
 
 @Entity
-public class Rooms {
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ROOM_ID")
@@ -13,7 +13,7 @@ public class Rooms {
 
     @ManyToOne
     @JoinColumn(name = "HOST_ID")
-    private Hosts hostId;
+    private Host hostId;
 
     private String roomName;
 
@@ -23,7 +23,6 @@ public class Rooms {
 
     private String roomLocation;
 
-    // Fixme 이런거 리스트/배열같은 걸로 묶으면 더 나으려나?
     private int roomAdultMax;
 
     private int roomChildrenMax;

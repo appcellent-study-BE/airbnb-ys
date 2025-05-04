@@ -3,7 +3,7 @@ package com.example.airbnb_ys.model;
 import jakarta.persistence.*;
 
 @Entity
-public class RoomAmenities {
+public class RoomAmenity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ROOM_AMENITY_ID")
@@ -11,11 +11,11 @@ public class RoomAmenities {
 
     @OneToOne
     @JoinColumn(name = "ROOM_ID")
-    private Rooms roomId;
+    private Room roomId;
 
     @ManyToOne
     @JoinColumn(name = "AMENITY_ID")
-    private Amenities amenityId;
+    private Amenity amenityId;
 
     private boolean isAmenity;
 }

@@ -13,11 +13,11 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private Members userId;
+    private Member userId;
 
     @ManyToOne
     @JoinColumn(name = "ROOM_ID")
-    private Rooms roomId;
+    private Room roomId;
 
     private LocalDateTime checkInDate;
     private LocalDateTime checkOutDate;

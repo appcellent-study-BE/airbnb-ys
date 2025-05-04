@@ -15,5 +15,5 @@ public class Wishlist {
 
     @ManyToOne
     @JoinColumn(name = "ROOM_ID")
-    private Rooms roomId;
+    private Room roomId;
 }

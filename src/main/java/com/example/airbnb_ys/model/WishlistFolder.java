@@ -11,7 +11,7 @@ public class WishlistFolder {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private Members userId;
+    private Member userId;
 
     private String wishlistName;
 }

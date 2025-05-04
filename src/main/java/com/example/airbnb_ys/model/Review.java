@@ -13,11 +13,11 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "ROOM_ID")
-    private Rooms roomId;
+    private Room roomId;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private Members userId;
+    private Member userId;
 
     private float averageRating;
 

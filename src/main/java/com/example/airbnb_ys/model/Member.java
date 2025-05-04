@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 
 @Entity
-public class Members {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
@@ -18,21 +18,20 @@ public class Members {
 
     private String userPassword;
 
-    //Todo userProfileImg
+    private String userProfileUrl;
 
     private String userEmail;
 
-    //Todo userPhoneNum
+    @Column(length = 11) // VARCHAR(11) 대응
+    private String userPhoneNum;
 
     private LocalDate userDOB;
 
-    // Todo default false
     private boolean isHost;
 
     private LocalDate registerDate;
 
     private Enum userGender;
 
-    // Todo default false
     private boolean isCertificate;
 }

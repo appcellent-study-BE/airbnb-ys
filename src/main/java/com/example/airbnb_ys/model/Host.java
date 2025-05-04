@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-public class Hosts {
+public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "HOST_ID")
@@ -13,7 +13,7 @@ public class Hosts {
 
     @OneToOne
     @JoinColumn(name = "USER_ID")
-    private Members userId;
+    private Member userId;
 
     private LocalDate hostDate;
 
