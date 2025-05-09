@@ -16,13 +16,9 @@ public class MainPageService {
         this.roomRepository = roomRepository;
     }
 
-    //    public List<Room> getAllRooms(){
-//        return roomRepository.findAll();
-//    }
     public List<MainPageResponseDto> getAllRooms(){
         return roomRepository.findAll().stream() // stream() : 컬렉션 처리 기능을 함수형 스타일로 제공
                 .map(MainPageResponseDto::new) // Room -> DTO 로 변환
                 .collect(Collectors.toList());
     }
-
 }

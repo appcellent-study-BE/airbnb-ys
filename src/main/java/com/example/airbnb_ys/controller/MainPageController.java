@@ -8,21 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-//@RequestMapping()
 public class MainPageController {
-    private final MainPageService mainPageService;
-
-    public MainPageController(MainPageService mainPageService){
-        this.mainPageService = mainPageService;
-    }
-
-//    @GetMapping("/")
-//    public List<Room> getAllRooms(){
-//        return mainPageService.getAllRooms();
-//    }
-
-    @GetMapping("/")
+  private final MainPageService mainPageService;
+  
+  public MainPageController(MainPageService mainPageService){
+     this.mainpageService = mainPageService;
+  }
+  
+  @GetMapping("/")
     public List<MainPageResponseDto> getAllRooms(){
         return mainPageService.getAllRooms();
     }
+  
 }
