@@ -9,13 +9,13 @@ import java.util.List;
 
 @RestController
 public class MainPageController {
-  private final MainPageService mainPageService;
-  
-  public MainPageController(MainPageService mainPageService){
-     this.mainpageService = mainPageService;
-  }
-  
-  @GetMapping("/")
+    private final MainPageService mainPageService;
+
+    public MainPageController(MainPageService mainPageService){
+        this.mainPageService = mainPageService;
+    }
+
+    @GetMapping("/")
     public List<MainPageResponseDto> getAllRooms(){
         return mainPageService.getAllRooms();
     }
