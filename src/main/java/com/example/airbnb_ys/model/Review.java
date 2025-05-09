@@ -1,10 +1,13 @@
 package com.example.airbnb_ys.model;
 
+import com.example.airbnb_ys.model.Room.Room;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +27,11 @@ public class Review {
 
     private LocalDateTime reviewDate;
 
-    private float Rating;
+    private float rating;
     private float ratingClean;
     private float ratingAccuracy;
     private float ratingCheckIn;
-    private float ratingConversation;
+    private float ratingCommunication;
     private float ratingLocation;
     private float ratingPrice;
 }

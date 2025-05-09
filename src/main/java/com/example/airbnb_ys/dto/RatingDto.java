@@ -5,7 +5,6 @@ import com.example.airbnb_ys.model.Review;
 import java.util.List;
 
 public class RatingDto {
-    // Todo : 이거 따로 저장해 아님 그때그때 계산해? (난 총점 따로 입력하는 거라고 생각함)
     private float averageRating;
     private float ratingClean;
     private float ratingAccuracy;
@@ -20,7 +19,7 @@ public class RatingDto {
         // Todo : 리뷰 없는 경우 처리해야 함
         int size = reviews.size();
         for (Review review : reviews) {
-            this.averageRating += review.getAverageRating();
+            this.averageRating += review.getRating();
             this.ratingClean += review.getRatingClean();
             this.ratingAccuracy += review.getRatingAccuracy();
             this.ratingCheckin += review.getRatingCheckIn();
