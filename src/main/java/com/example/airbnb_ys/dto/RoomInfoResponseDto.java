@@ -1,11 +1,13 @@
 package com.example.airbnb_ys.dto;
 
+import com.example.airbnb_ys.model.Room.Room;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RoomInfoResponseDto {
     private String roomName;
-//    private int roomMax; 이게 대체 뭘까 .... -> adult, children, pet 으로 수정
+    private int roomMax;
     private int bedroomNum;
     private int bathroomNum;
     private String roomDscrptn;
@@ -16,6 +18,7 @@ public class RoomInfoResponseDto {
 
     public RoomInfoResponseDto(Room room){
         this.roomName = room.getRoomName();
+        this.roomMax = room.getRoomAdultMax() + room.getRoomChildrenMax();
         this.bedroomNum = room.getBedroomNum();
         this.bathroomNum = room.getBathroomNum();
         this.roomDscrptn = room.getRoomDscrptn();
