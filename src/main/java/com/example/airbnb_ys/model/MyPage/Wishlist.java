@@ -1,6 +1,5 @@
 package com.example.airbnb_ys.model.MyPage;
 
-import com.example.airbnb_ys.model.Room.Room;
 import jakarta.persistence.*;
 
 @Entity

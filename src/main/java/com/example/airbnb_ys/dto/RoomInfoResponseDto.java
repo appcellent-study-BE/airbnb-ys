@@ -1,7 +1,5 @@
 package com.example.airbnb_ys.dto;
 
-import com.example.airbnb_ys.model.Room.Room;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

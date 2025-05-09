@@ -1,7 +1,5 @@
 package com.example.airbnb_ys.dto;
 
-import com.example.airbnb_ys.model.Room.Room;
-
 import java.math.BigDecimal;
 
 public class MainPageResponseDto {
