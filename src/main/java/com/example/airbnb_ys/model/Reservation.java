@@ -1,5 +1,7 @@
 package com.example.airbnb_ys.model;
 
+import com.example.airbnb_ys.model.Enum.ReserveStatus;
+import com.example.airbnb_ys.model.Room.Room;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -9,7 +11,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "RESERBATION_ID")
-    private Long reservationId;
+    private int reservationId;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -22,7 +24,8 @@ public class Reservation {
     private LocalDateTime checkInDate;
     private LocalDateTime checkOutDate;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ReserveStatus status;
 
     private int adults;
 

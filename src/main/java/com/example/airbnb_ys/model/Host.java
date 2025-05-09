@@ -9,7 +9,7 @@ public class Host {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "HOST_ID")
-    private Long hostId;
+    private int hostId;
 
     @OneToOne
     @JoinColumn(name = "USER_ID")
