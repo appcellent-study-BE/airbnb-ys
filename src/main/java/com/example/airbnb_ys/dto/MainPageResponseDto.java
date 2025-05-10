@@ -12,12 +12,12 @@ public class MainPageResponseDto {
     private float averageRating;
     private int reviewCount;
 
-    public MainPageResponseDto(Room room){
+    public MainPageResponseDto(Room room, float averageRating, int reviewCount){
         this.roomId = room.getRoomId();
         this.roomName = room.getRoomName();
         this.roomAddress = room.getRoomAddress();
         this.roomPrice = room.getRoomPrice();
-        this.averageRating = 4.5f; // Todo : 별점 평균 계산 or 맞게 반환
-        this.reviewCount = room.getReviews().size();
-    } // Todo 서비스단으로 넘길지 더 찾아보기
+        this.averageRating = averageRating;
+        this.reviewCount = reviewCount;
+    }
 }

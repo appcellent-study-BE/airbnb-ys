@@ -3,7 +3,6 @@ package com.example.airbnb_ys.dto;
 import com.example.airbnb_ys.model.Room.Room;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RoomInfoResponseDto {
     private String roomName;
@@ -16,7 +15,7 @@ public class RoomInfoResponseDto {
     private RatingDto ratings;
     private List<ReviewResponseDto> reviews;
 
-    public RoomInfoResponseDto(Room room){
+    public RoomInfoResponseDto(Room room, RatingDto ratings, List<ReviewResponseDto> reviews){
         this.roomName = room.getRoomName();
         this.roomMax = room.getRoomAdultMax() + room.getRoomChildrenMax();
         this.bedroomNum = room.getBedroomNum();
@@ -24,9 +23,7 @@ public class RoomInfoResponseDto {
         this.roomDscrptn = room.getRoomDscrptn();
         this.roomAddress = room.getRoomAddress();
         this.roomLocation = room.getRoomLocation();
-        this.ratings = new RatingDto(room.getReviews());
-        this.reviews = room.getReviews().stream()
-                .map(ReviewResponseDto::new)
-                .collect(Collectors.toList());
+        this.ratings = ratings;
+        this.reviews = reviews;
     }
 }

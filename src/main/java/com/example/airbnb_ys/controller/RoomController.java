@@ -17,7 +17,7 @@ public class RoomController {
     }
 
     @GetMapping("/{roomId}")
-    public Response<RoomInfoResponseDto> getRoomInfo(Long roomId){
+    public Response<RoomInfoResponseDto> getRoomInfo(int roomId){
         return Response.success("방 상세정보 불러오기 성공", roomService.getRoomInfo(roomId));
     }
 }
