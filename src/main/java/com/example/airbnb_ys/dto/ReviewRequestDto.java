@@ -1,6 +1,10 @@
 package com.example.airbnb_ys.dto;
 
+import lombok.Getter;
+
+@Getter
 public class ReviewRequestDto {
+    private int reservationId;
     private String review;
     private float rating;
     private float ratingClean;
@@ -10,6 +14,5 @@ public class ReviewRequestDto {
     private float ratingLocation;
     private float ratingPrice;
 
-    // 예약 번호도 받아야 하고 + 숙소 사용 날짜 
-    // 리뷰 등록 날짜도 받아야 함
+    // 숙소 사용 날짜
 }

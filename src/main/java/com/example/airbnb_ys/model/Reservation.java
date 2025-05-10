@@ -3,14 +3,16 @@ package com.example.airbnb_ys.model;
 import com.example.airbnb_ys.model.Enum.ReserveStatus;
 import com.example.airbnb_ys.model.Room.Room;
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RESERBATION_ID")
+    @Column(name = "RESERVATION_ID")
     private int reservationId;
 
     @ManyToOne

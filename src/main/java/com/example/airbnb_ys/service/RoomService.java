@@ -8,6 +8,7 @@ import com.example.airbnb_ys.model.Room.Room;
 import com.example.airbnb_ys.repository.ReviewRepository;
 import com.example.airbnb_ys.repository.RoomRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,12 +23,12 @@ public class RoomService {
         this.reviewRepository = reviewRepository;
     }
 
-    public RoomInfoResponseDto getRoomInfo(int roomId){
+    public RoomInfoResponseDto getRoomInfo(@RequestBody int roomId){
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new IllegalArgumentException("방 존재 X"));
 
         // 별점 (평균) 계산하기
-        List<Review> allReviews = reviewRepository.findByRoomId(roomId).stream().toList();
+        List<Review> allReviews = reviewRepository.findByRoomId(room).stream().toList();
         RatingDto ratings = calRatings(allReviews);
 
         // 리뷰 받아오기
