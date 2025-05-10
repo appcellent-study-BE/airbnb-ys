@@ -8,7 +8,6 @@ import com.example.airbnb_ys.model.Room.Room;
 import com.example.airbnb_ys.repository.ReservationRepository;
 import com.example.airbnb_ys.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
@@ -24,7 +23,7 @@ public class ReviewService {
     }
 
     public void writeReview(@RequestBody ReviewRequestDto reviewRequestDto){
-        System.out.println(reviewRequestDto.getReservationId());
+        // System.out.println(reviewRequestDto.getReservationId());
         Reservation reservation = reservationRepository.findById(reviewRequestDto.getReservationId())
                 .orElseThrow(() -> new IllegalArgumentException("해당 예약이 존재하지 않습니다."));
 
