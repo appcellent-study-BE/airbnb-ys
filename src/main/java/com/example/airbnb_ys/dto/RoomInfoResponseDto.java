@@ -20,7 +20,7 @@ public class RoomInfoResponseDto {
         this.roomMax = room.getRoomAdultMax() + room.getRoomChildrenMax();
         this.bedroomNum = room.getBedroomNum();
         this.bathroomNum = room.getBathroomNum();
-        this.roomDscrptn = room.getRoomDscrptn();
+        this.roomDscrptn = room.getRoomDescription();
         this.roomAddress = room.getRoomAddress();
         this.roomLocation = room.getRoomLocation();
         this.ratings = ratings;

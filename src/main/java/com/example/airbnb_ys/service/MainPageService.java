@@ -1,7 +1,6 @@
 package com.example.airbnb_ys.service;
 
 import com.example.airbnb_ys.dto.MainPageResponseDto;
-import com.example.airbnb_ys.model.Room.Room;
 import com.example.airbnb_ys.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
