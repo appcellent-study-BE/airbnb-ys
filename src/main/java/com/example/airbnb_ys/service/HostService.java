@@ -6,6 +6,7 @@ import com.example.airbnb_ys.model.Member;
 import com.example.airbnb_ys.model.Room.Room;
 import com.example.airbnb_ys.repository.HostRepository;
 import com.example.airbnb_ys.repository.MemberRepository;
+import com.example.airbnb_ys.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -15,10 +16,12 @@ import java.time.LocalDate;
 public class HostService {
     private final HostRepository hostRepository;
     private final MemberRepository memberRepository;
+    private final RoomRepository roomRepository;
 
-    public HostService(HostRepository hostRepository, MemberRepository memberRepository){
+    public HostService(HostRepository hostRepository, MemberRepository memberRepository, RoomRepository roomRepository){
         this.hostRepository = hostRepository;
         this.memberRepository = memberRepository;
+        this.roomRepository = roomRepository;
     }
 
     // 호스트 등록하기
@@ -63,5 +66,6 @@ public class HostService {
                 roomRequestDto.getCheckInTime(),
                 roomRequestDto.getCheckOutTime()
         );
+        roomRepository.save(room);
     }
 }
