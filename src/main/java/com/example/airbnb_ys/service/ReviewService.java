@@ -22,7 +22,7 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public void writeReview(@RequestBody ReviewRequestDto reviewRequestDto){
+    public void writeReview(ReviewRequestDto reviewRequestDto){
         // System.out.println(reviewRequestDto.getReservationId());
         Reservation reservation = reservationRepository.findById(reviewRequestDto.getReservationId())
                 .orElseThrow(() -> new IllegalArgumentException("해당 예약이 존재하지 않습니다."));

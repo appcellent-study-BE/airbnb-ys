@@ -23,7 +23,7 @@ public class RoomService {
         this.reviewRepository = reviewRepository;
     }
 
-    public RoomInfoResponseDto getRoomInfo(@RequestBody int roomId){
+    public RoomInfoResponseDto getRoomInfo(int roomId){
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new IllegalArgumentException("방 존재 X"));
 

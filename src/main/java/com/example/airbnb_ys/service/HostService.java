@@ -25,7 +25,7 @@ public class HostService {
     }
 
     // 호스트 등록하기
-    public void newHost(@RequestBody int userId){
+    public void newHost(int userId){
         // Todo 1. Member 태이블에서 isHost -> true 로 변경
 
         // 2-1. Member 테이블에서 이메일, 전화번호 있는지 가져오기
@@ -46,7 +46,7 @@ public class HostService {
     }
 
     // 숙소 등록하기
-    public void becomeHost(@RequestBody Member userId, @RequestBody RoomRequestDto roomRequestDto){
+    public void becomeHost(Member userId, RoomRequestDto roomRequestDto){
         // userId 로 hostId 만들기
         Host hostId = hostRepository.findByUserId(userId);
 

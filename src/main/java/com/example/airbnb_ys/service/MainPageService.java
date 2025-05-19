@@ -17,7 +17,6 @@ public class MainPageService {
     }
 
     public List<MainPageResponseDto> getAllRooms() {
-
         return roomRepository.findAll().stream() // stream() : 컬렉션 처리 기능을 함수형 스타일로 제공
                 .map(room -> { // Room -> DTO 로 변환
                     float averageRating = 4.5f; // Todo : 별점 평균 계산 or 맞게 반환
