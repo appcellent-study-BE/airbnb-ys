@@ -36,12 +36,13 @@ public class ReservationService {
 
     // 숙소 예약하기
     @Transactional
-    public int roomBooking(@RequestBody RoomBookingRequestDto roomBookingRequestDto){
+    public int roomBooking(int roomId_input, RoomBookingRequestDto roomBookingRequestDto){
+        // Todo : 날짜 겹치게 예약 못하도록
         int userId_input = roomBookingRequestDto.getUserId();
         Member userId = memberRepository.findById(userId_input).
                 orElseThrow(() -> new CustomException(ErrorCode.ID_NOT_FOUND));
 
-        int roomId_input = roomBookingRequestDto.getRoomId();
+        // int roomId_input = roomBookingRequestDto.getRoomId();
         Room roomId = roomRepository.findById(roomId_input)
                 .orElseThrow(() -> new CustomException(ErrorCode.ROOM_NOT_FOUND));
 

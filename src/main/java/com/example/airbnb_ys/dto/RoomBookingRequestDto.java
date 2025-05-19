@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 public class RoomBookingRequestDto {
-    private int roomId;
+    // private int roomId;
     private int userId;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

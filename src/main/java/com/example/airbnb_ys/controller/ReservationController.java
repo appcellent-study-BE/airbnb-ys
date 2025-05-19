@@ -2,6 +2,7 @@ package com.example.airbnb_ys.controller;
 
 import com.example.airbnb_ys.dto.Response;
 import com.example.airbnb_ys.dto.RoomBookingRequestDto;
+import com.example.airbnb_ys.model.Room.Room;
 import com.example.airbnb_ys.service.ReservationService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +15,10 @@ public class ReservationController {
         this.reservationService = reservationService;
     }
 
-    @PostMapping("/stays")
-    public Response<Integer> roomBooking(@RequestBody RoomBookingRequestDto roomBookingRequestDto){
-        int reservationId = reservationService.roomBooking(roomBookingRequestDto);
+    @PostMapping("/stays/{roomId}")
+    public Response<Integer> roomBooking(@PathVariable("roomId") int roomId,
+                                         @RequestBody RoomBookingRequestDto roomBookingRequestDto){
+        int reservationId = reservationService.roomBooking(roomId, roomBookingRequestDto);
         return Response.success("숙소 예약 성공", reservationId);
     }
 
